@@ -43,24 +43,24 @@ Here we show the construction of $\mathbf{g'}^{\mathbf{a'}}$ is natural. Given v
 $$
 \left(
 \begin{matrix}
-    1 & 0 & 0 & 1 \\
-    0 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 1 \\\\
+    0 & 1 & 0 & 0 \\\\
     0 & 0 & 1 & 0
 \end{matrix}
 \right)
 \cdot
 \left(
 \begin{matrix}
-    1 \\
-    x \\
+    1 \\\\
+    x \\\\
     x^{-1}
 \end{matrix}
 \right) =
 \left(
 \begin{matrix}
-    1 \\
-    x \\
-    x^{-1} \\
+    1 \\\\
+    x \\\\
+    x^{-1} \\\\
     1
 \end{matrix}
 \right)
@@ -105,8 +105,8 @@ The hadamard product $\mathbf{a} \circ (\mathbf{a} - \mathbf{1}^n) = \mathbf{0}^
 Given the commitment of $\mathbf{g}^{\mathbf{a}}$, the commitment of $(\mathbf{a}) \circ \mathbf{y}^n$ can be derived from setting $\mathbf{h} = \mathbf{g}^{(\mathbf{1/y})^n}$. Then 
 $$
 \begin{align*}
-Com(\mathbf{a} \circ \mathbf{y}^n) &= \mathbf{h}^{\mathbf{a} \circ \mathbf{y}^n} \\
-    &= \mathbf{g}^{(\mathbf{1/y})^n \circ \mathbf{a} \circ \mathbf{y}^n} \\ 
+Com(\mathbf{a} \circ \mathbf{y}^n) &= \mathbf{h}^{\mathbf{a} \circ \mathbf{y}^n} \\\\
+    &= \mathbf{g}^{(\mathbf{1/y})^n \circ \mathbf{a} \circ \mathbf{y}^n} \\\\
     &= \mathbf{g}^{\mathbf{a}} = Com(\mathbf{a})
 \end{align*}
 $$
@@ -131,7 +131,7 @@ such that $P = \mathbf{g}^{\mathbf{a}} \mathbf{h}^{\mathbf{b}} \cdot u^{\langle 
 Similar with previous IPA, it folds vectors with random challenge into half in each round. Although previous scheme also applies, we will follow the folding result in Bulletproofs paper, 
 $$
 \begin{align*}
-\mathbf{a'} &= x \mathbf{a}_L + x^{-1} \mathbf{a}_R \\
+\mathbf{a'} &= x \mathbf{a}_L + x^{-1} \mathbf{a}_R \\\\
 \mathbf{b'} &= x^{-1}  \mathbf{b}_L + x \mathbf{b}_R
 \end{align*}
 $$
@@ -139,8 +139,8 @@ Define $H(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4, v) = \mathbf{g
 This time, prover firsly commit $L, R$ to verifier, where
 $$
 \begin{matrix*}
-    L = H(& \mathbf{0} & \mathbf{a}_L & \mathbf{b}_R & \mathbf{0} & \langle \mathbf{a}_L, \mathbf{b}_R \rangle &) \\
-    R = H(& \mathbf{a}_R & \mathbf{0} & \mathbf{0} & \mathbf{b}_L  & \langle \mathbf{a}_R, \mathbf{b}_L \rangle &) \\
+    L = H(& \mathbf{0} & \mathbf{a}_L & \mathbf{b}_R & \mathbf{0} & \langle \mathbf{a}_L, \mathbf{b}_R \rangle &) \\\\
+    R = H(& \mathbf{a}_R & \mathbf{0} & \mathbf{0} & \mathbf{b}_L  & \langle \mathbf{a}_R, \mathbf{b}_L \rangle &) \\\\
     P = H(& \mathbf{a}_L & \mathbf{a}_R & \mathbf{b}_L & \mathbf{b}_R  & \langle \mathbf{a}, \mathbf{b} \rangle &)
 \end{matrix*}
 $$
@@ -159,7 +159,7 @@ $$
 such that $P = \mathbf{g}^{\mathbf{a}} \mathbf{h}^{\mathbf{b}}$ and $c = \langle \mathbf{a}, \mathbf{b} \rangle$.
 
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e4fb3fe2f0294beabdc14b1ba44b842f.png#pic_center)
+![algorithm](/FromIpaToBulletproofs-1.png)
 
 
 ## Range proof
@@ -176,7 +176,7 @@ Only the second equation is easy to prove through Bulletproofs IPA directly, by 
 However, due to $\langle \mathbf{a}_L,  \mathbf{a}_R \rangle = 0$, the first equation can be transformed into $\langle \mathbf{a}_L,  \mathbf{a}_R + z \cdot  \mathbf{2}^n \rangle = z \cdot v$ for random $z$, which can prove straightforwardly. And the third equation can be transformed into $\langle \mathbf{a}_L - \mathbf{a}_R - \mathbf{1}^n, \mathbf{y}^n \rangle = 0$ for random $y$, and it can be then transformed into 
 $$
 \begin{align*}
-\langle \mathbf{a}_L - \mathbf{1}^n,  \mathbf{y}^n \circ (\mathbf{a}_R + \mathbf{1}^n) \rangle &= \langle \mathbf{a}_L,  \mathbf{y}^n \circ \mathbf{a}_R \rangle + \langle \mathbf{a}_L, \mathbf{y}^n\rangle - \langle \mathbf{a}_R, \mathbf{y}^n\rangle - \langle \mathbf{1}^n, \mathbf{y}^n\rangle \\
+\langle \mathbf{a}_L - \mathbf{1}^n,  \mathbf{y}^n \circ (\mathbf{a}_R + \mathbf{1}^n) \rangle &= \langle \mathbf{a}_L,  \mathbf{y}^n \circ \mathbf{a}_R \rangle + \langle \mathbf{a}_L, \mathbf{y}^n\rangle - \langle \mathbf{a}_R, \mathbf{y}^n\rangle - \langle \mathbf{1}^n, \mathbf{y}^n\rangle \\\\
  &= \langle \mathbf{a}_L, \mathbf{y}^n\rangle - \langle \mathbf{a}_R, \mathbf{y}^n\rangle - \langle \mathbf{1}^n, \mathbf{y}^n\rangle = \langle \mathbf{a}_L - \mathbf{a}_R - \mathbf{1}^n, \mathbf{y}^n \rangle = 0
 \end{align*}
 $$

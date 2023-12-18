@@ -1,3 +1,3 @@
-[submodule "themes/paper"]
-	path = themes/paper
-	url = https://github.com/nanxiaobei/hugo-paper
+[submodule "themes/simple"]
+	path = themes/simple
+	url = https://github.com/gyp2847399255/hugo-dead-simple.git

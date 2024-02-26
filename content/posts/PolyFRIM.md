@@ -1,3 +1,10 @@
+---
+title: "PolyFRIM and FRAVSS"
+date: 2024-02-26T13:57:39+08:00
+draft: false
+math: true
+---
+
 # One-to-Many Multivariate Polynomial Commitment from Fast Reed-Solomon IOPs and Its Application to Asynchronous Verifiable Secret Sharing
 
 ## Introduction and Motivation

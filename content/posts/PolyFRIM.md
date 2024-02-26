@@ -24,9 +24,9 @@ To solve these questions, we bring the contributions below:
 1.  **PolyFRIM with a one-to-many prover**: We give a one-to-many fashion algorithm for PolyFRIM, where a prover can efficiently open $O(n^2)$ different evaluations on a binary polynomial to $O(n^2)$ different verifiers. The prover complexity  is $O(n^2 \log n)$, and is optimal as discussed before. The verifier and communication complexity for every verifier are both $O(\log^2 n)$, the same as those without a one-to-many prover. 
 1.  **FRAVSS**: Relying on the one-to-many algorithm, we constructed a new transparent AVSS called FRAVSS in the framework of HAVSS. As shown in Table 2, FRAVSS has one of the lowest prover complexity. FRAVSS also has a competitive party computation complexity and a competitive communication complexity to other schemes.
 
-![alt text](../../static/PolyFRIM/image.png)
+![alt text](/PolyFRIM/image.png)
 
-![alt text](../../static/PolyFRIM/image-1.png)
+![alt text](/PolyFRIM/image-1.png)
 
 ## Implementation and evaluation
 
@@ -42,7 +42,7 @@ We compare PolyFRIM with other transparent PCSs, including Bulletproofs, Virgo a
 
 Figure 3 shows the prover time, verifier time, and proof size of these transparent PCSs. The size of the multi-variate polynomial (number of monomials) varies from $2^{5}$ to $2^{19}$. As shown in the figure, the prover time of PolyFRIM is comparably fast. It only takes 9\,s to generate a proof for a multi-variate polynomial with size $2^{20}$, which is 4-25$\times$ faster than other schemes. Compared with Hyperplonk, PolyFRIM has 4-5$\times$ faster verifier time and 60\% smaller proof size.
 
-![alt text](../../static/PolyFRIM/image-2.png)
+![alt text](/PolyFRIM/image-2.png)
 
 Figure 4 presents the performance of PolyFRIM and other PCSs in the one-to-many fashion, i.e., opening $n$ different evaluations to $n$ verifiers. Specifically, we compare PolyFRIM with KZG, AMT, and ZXH+22.
 
@@ -50,11 +50,11 @@ As shown in the figure, the prover time of PolyFRIM in the one-to-many fashion i
 
 The verifier time of PolyFRIM in the one-to-many fashion is 3-9$\times$ faster than AMT and ZXH+22. An interesting point is that even compared with KZG, which has constant verifier complexity to the party number, our scheme has a concrete faster verifier time when the number of parties is smaller than $2^{15}$.
 
-![alt text](../../static/PolyFRIM/image-3.png)
+![alt text](/PolyFRIM/image-3.png)
 
 Finally, we evaluate and compare the performance of PCSs in different AVSS schemes, including eVSS, Bingo and hbACSS. The results are shown in Figure 5. As shown in Figure, compared with AVSS schemes via similar methodology, i.e., hbAVSS and Bingo, the dealer time caused by the PCS in FRAVSS is 4-9$\times$ faster. The party time caused by the PCS in FRAVSS is competitive to hbAVSS and Bingo (2$\times$ slower to 3$\times$ faster). Compared with Bingo, FRAVSS has a 10$\times$ slower dealer time but a 10$\times$ faster party time caused by the underlying PCS.
 
-![alt text](../../static/PolyFRIM/image-4.png)
+![alt text](/PolyFRIM/image-4.png)
 
 ## Conclusion
 
